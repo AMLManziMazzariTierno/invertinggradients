@@ -112,7 +112,7 @@ class DownsampleBlock(nn.Module):
         return functional.relu(y)
 
 class ResNet20(nn.Module):
-    def __init__(self, num_blocks, num_classes=100, option='A', norm_type="BATCH"):
+    def __init__(self, num_blocks=3, num_classes=100, option='A', norm_type="BATCH"):
         '''
         ResNet20 implementation
         ### PARAMS
