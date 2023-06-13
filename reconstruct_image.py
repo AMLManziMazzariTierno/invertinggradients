@@ -49,6 +49,10 @@ if __name__ == "__main__":
         model_seed = None
     else:
         model, model_seed = inversefed.construct_model(args.model, num_classes=10, num_channels=3)
+
+
+
+
     model.to(**setup)
     model.eval()
 
