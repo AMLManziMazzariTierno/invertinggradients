@@ -163,6 +163,6 @@ class ResNet20(nn.Module):
 
         return x
 
-def resnet20(n_classes=100, option='B', norm_type="GROUP", **kwargs):
+def resnet20(n_classes=100, option='A', norm_type="GROUP", **kwargs):
     print(f"Creating ResNet20 with params #classes: {n_classes} option: {option} norm_type: {norm_type}")
     return ResNet20(num_blocks=3, num_classes=n_classes, option=option, norm_type=norm_type)
