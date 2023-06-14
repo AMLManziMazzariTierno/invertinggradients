@@ -12,6 +12,7 @@ from collections import OrderedDict
 import numpy as np
 from ..utils import set_random_seed
 
+from resnet20.ResNet20 import resnet20
 
 
 
@@ -86,6 +87,8 @@ def construct_model(model, num_classes=10, seed=None, num_channels=3, modelkey=N
             ('linear3', torch.nn.Linear(width, num_classes))]))
     elif model == 'ResNet20':
         model = ResNet(torchvision.models.resnet.BasicBlock, [3, 3, 3], num_classes=num_classes, base_width=16)
+    elif model == 'customResNet20': #our ResNet20 implementation
+        model = resnet20(num_blocks=3, n_classes=num_classes, option='B', norm_type="GROUP")
     elif model == 'ResNet20-nostride':
         model = ResNet(torchvision.models.resnet.BasicBlock, [3, 3, 3], num_classes=num_classes, base_width=16,
                        strides=[1, 1, 1, 1])
